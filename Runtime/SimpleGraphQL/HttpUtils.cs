@@ -57,7 +57,8 @@ namespace SimpleGraphQL
             JsonSerializerSettings serializerSettings = null,
             Dictionary<string, string> headers = null,
             string authToken = null,
-            string authScheme = null
+            string authScheme = null,
+            int timeout = 3
         )
         {
             var uri = new Uri(url);
@@ -70,7 +71,8 @@ namespace SimpleGraphQL
                 downloadHandler = new DownloadHandlerBuffer(),
                 disposeCertificateHandlerOnDispose = true,
                 disposeDownloadHandlerOnDispose = true,
-                disposeUploadHandlerOnDispose = true
+                disposeUploadHandlerOnDispose = true,
+                timeout = timeout
             })
             {
                 if (authToken != null)

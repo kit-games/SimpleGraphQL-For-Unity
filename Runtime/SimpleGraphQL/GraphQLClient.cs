@@ -61,7 +61,8 @@ namespace SimpleGraphQL
             JsonSerializerSettings serializerSettings = null,
             Dictionary<string, string> headers = null,
             string authToken = null,
-            string authScheme = null
+            string authScheme = null,
+            int timeout = 3
         )
         {
             if (CustomHeaders != null)
@@ -85,7 +86,8 @@ namespace SimpleGraphQL
                 serializerSettings,
                 headers,
                 authToken,
-                authScheme
+                authScheme,
+                timeout
             );
 
             return postQueryAsync;
